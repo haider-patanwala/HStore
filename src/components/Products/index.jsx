@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const Products = ({ products = [] }) => {
 	return (
@@ -8,7 +9,10 @@ const Products = ({ products = [] }) => {
 					{products.map((product) => {
 						const { id, title, price, description, category, image } = product
 						return (
-							<div className='lg:w-1/4 md:w-1/2 p-4 w-full mb-2 cursor-pointer'>
+							<Link
+								to={`/products/${id}`}
+								className='lg:w-1/4 md:w-1/2 p-4 w-full mb-2 cursor-pointer'
+							>
 								<a className='block relative h-48 rounded overflow-hidden'>
 									<img
 										alt={title}
@@ -25,7 +29,7 @@ const Products = ({ products = [] }) => {
 									</h2>
 									<p className='mt-1 font-semibold text-md'>₹{price}</p>
 								</div>
-							</div>
+							</Link>
 						)
 					})}
 				</div>
