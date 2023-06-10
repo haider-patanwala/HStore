@@ -3,7 +3,6 @@ import Hero from "../../components/Hero"
 import Products from "../../components/Products"
 import FeatureCard from "../../components/FeatureCard"
 import Stats from "../../components/Stats"
-import Footer from "../../components/Footer"
 
 const Home = () => {
 	const [products, setProducts] = useState([])
@@ -36,7 +35,7 @@ const Home = () => {
 			<Products />
 			<FeatureCard />
 			<Stats />
-			<Footer />
+			
 		</>
 	)
 }
