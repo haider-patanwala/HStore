@@ -1,13 +1,13 @@
 import React from "react"
-import { Routes, Route } from "react-router-dom"
 import "./App.css"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./modules/Home"
+import { Routes, Route } from "react-router-dom"
 import Product from "./modules/Product"
-import Footer from "./components/Footer"
-import ProductsArchive from "./components/ProductsArchive"
 import Products from "./modules/Products"
-import CategorizedProducts from "./modules/CategorizedProducts"
+import CategoryProducts from "./modules/CategoryProducts"
+import Cart from "./modules/Cart"
 
 function App() {
 	return (
@@ -15,9 +15,11 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/products/:id' element={<ProductsArchive />} />
+				<Route path='/products/:id' element={<Product />} />
 				<Route path='/products' element={<Products />} />
-				<Route path='/categories/:name' element={<CategorizedProducts />} />
+				<Route path='/categories/:name' element={<CategoryProducts />} />
+				<Route path='cart' element={<Cart />} />
+				{/* <Route path="*" element={<div>404</div>} /> */}
 			</Routes>
 			<Footer />
 		</div>
