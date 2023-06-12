@@ -1,6 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
+const navigations = [
+	{ name: "Home", path: "/" },
+	{ name: "Products", path: "/products" },
+	{ name: "About", path: "/about" },
+	{ name: "Contact", path: "/contact" },
+]
+
 const Header = () => {
 	return (
 		<header class='text-gray-600 body-font shadow-lg'>
@@ -24,10 +31,13 @@ const Header = () => {
 					<span class='ml-3 text-xl'>HStore</span>
 				</Link>
 				<nav class='md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center'>
-					<a class='mr-5 hover:text-gray-900'>First Link</a>
-					<a class='mr-5 hover:text-gray-900'>Second Link</a>
-					<a class='mr-5 hover:text-gray-900'>Third Link</a>
-					<a class='mr-5 hover:text-gray-900'>Fourth Link</a>
+					{navigations.map((navigation) => {
+						return (
+							<Link to={navigation.path} className='mr-5 hover:text-gray-900'>
+								{navigation.name}
+							</Link>
+						)
+					})}
 				</nav>
 				<button class='inline-flex items-center bg-[#4299E1] text-slate-100 border-0 focus:outline-none hover:bg-gray-200 hover:text-[#4299E1] py-2 px-4 rounded text-base mt-4 md:mt-0'>
 					Goto Cart
