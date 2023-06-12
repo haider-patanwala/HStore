@@ -12,7 +12,7 @@ function Product() {
 			setProduct(data)
 		}
 		fetchProduct()
-	}, [id])
+	}, [])
 
 	if (Object.keys(product).length === 0) {
 		return (
