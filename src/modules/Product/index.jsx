@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 const Product = () => {
@@ -44,7 +44,10 @@ const Product = () => {
 		}
 	}
 
-	if (!Object.keys(product).length > 0) return <div>Loading.....</div>
+	if (!Object.keys(product).length > 0)
+		return (
+			<div className='flex justify-center text-slate-500'>Loading.....</div>
+		)
 
 	return (
 		<section className='text-gray-600 body-font overflow-hidden'>
@@ -67,9 +70,9 @@ const Product = () => {
 								<svg
 									fill='currentColor'
 									stroke='currentColor'
-									stroke-linecap='round'
-									stroke-linejoin='round'
-									stroke-width='2'
+									strokeLinecap='round'
+									strokeLinejoin='round'
+									strokeWidth='2'
 									className='w-4 h-4 text-indigo-500'
 									viewBox='0 0 24 24'
 								>
